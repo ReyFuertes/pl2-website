@@ -10,7 +10,7 @@
       <div class="input-container" fxFlex fxLayoutAlign="center center">
         <input type="password" class="password" formControlName="password" autocomplete="off">
       </div>
-      <div class="btn-login" (click)="onLogin()"></div>
+      <div class="btn-login" [ngClass]="{'disabled': !form.valid}" (click)="onLogin()"></div>
     </div>
     <div *ngIf="hasLogin" class="logout" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
       <div class="btn-logout" (click)="onLogout()"></div>

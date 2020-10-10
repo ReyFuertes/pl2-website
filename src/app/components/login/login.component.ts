@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private store: Store<AppState>, private router: Router, private fb: FormBuilder, private loginSrv: AuthService) {
     this.form = this.fb.group({
-      login: ['rfuertes', Validators.required],
-      password: ['p@55w0rd', Validators.required]
+      login: [null, Validators.compose([ Validators.required, Validators.pattern('^[a-zA-Z0-9]+$') ])],
+      password: [null, Validators.required]
     });
     this.store.pipe(select(getHasLoginSelector)).subscribe(res => {
       if (res === true) {

@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private router: Router, private store: Store<AppState>, private fb: FormBuilder, private regSrv: RegisterService) {
     this.form = this.fb.group({
-      login: [null, Validators.required],
+      login: [null, Validators.compose([ Validators.required, Validators.pattern('^[a-zA-Z0-9]+$') ])],
       password: [null, Validators.required]
     });
 

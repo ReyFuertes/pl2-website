@@ -30,6 +30,9 @@ a {
 div {
   outline: none;
 }
+.disabled {
+  cursor: not-allowed !important;
+}
 input {
   background: transparent;
   border: none;
