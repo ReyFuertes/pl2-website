@@ -13,6 +13,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { DownloadComponent } from './components/download/download.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { GuideComponent } from './components/guide/guide.component';
+import { AccountInfoComponent } from './components/account-info/account-info.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GuideComponent } from './components/guide/guide.component';
     RegistrationComponent,
     DownloadComponent,
     FeaturesComponent,
-    GuideComponent
+    GuideComponent,
+    AccountInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AccountInfoComponent } from './components/account-info/account-info.component';
 import { AnnouncementsNewsComponent } from './components/announcements-news/announcements-news.component';
 import { DownloadComponent } from './components/download/download.component';
 import { FeaturesComponent } from './components/features/features.component';
@@ -24,6 +25,9 @@ const routes: Routes = [{
 }, {
   path: 'newbie-guide',
   component: GuideComponent
+}, {
+  path: 'account-info',
+  component: AccountInfoComponent
 }];
 
 @NgModule({
