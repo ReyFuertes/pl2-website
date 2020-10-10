@@ -1,0 +1,24 @@
+<div class="registration-container" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="20px">
+  <ng-container *ngIf="!registerSuccess; else registrationSuccess">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <h2>Account Registration</h2>
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="start center">
+      <div class="input">
+        <input type="text" class="username" autocomplete="off">
+      </div>
+      <div class="input">
+        <input type="password" class="password" autocomplete="off">
+      </div>
+      <div class="btn-register" (click)="onRegister()"></div>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #registrationSuccess>
+  <div class="registration-success" fxLayout="column" fxLayoutAlign="center center">
+    <h2>Registration Successfull</h2>
+    <p>You can now login your account</p>
+  </div>
+</ng-template>

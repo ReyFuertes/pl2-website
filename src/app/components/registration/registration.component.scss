@@ -1,0 +1,45 @@
+.registration-container {
+  padding-top: 115px;
+  >div {
+    width: 100%;
+    h2 {
+      font-family: pl2-font;
+      font-size: 24px;
+      color: #888;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+  }
+}
+.registration-success {
+  h2 {
+    font-family: pl2-font;
+    font-size: 25px;
+    background: -webkit-linear-gradient(#795032, #e1cb88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+  }
+  p {
+    color: #555555;
+    font-size: 12px;
+  }
+}
+.input {
+  background-image: url('src/assets/images/input-bg.png');
+  background-repeat: no-repeat;
+  input {
+    width: 140px;
+    height: 33px;
+  }
+}
+.btn-register {
+  background-image: url('src/assets/images/btn-register.png');
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 143px;
+  margin-bottom: 15px;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+}

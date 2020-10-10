@@ -1,0 +1,44 @@
+.announcement-news {
+  div {
+    max-width: 400px;
+    padding: 0 20px;
+  }
+}
+.announcements {
+  min-height: 230px;
+  height: 230px;
+  max-height: 230px;
+
+  >div {
+    text-align: center;
+    color: #444;
+    padding: 0 30px;
+
+    p {
+      line-height: 22px;
+      font-family: 'Roboto Slab', serif;
+      font-size: 11px;
+    }
+  }
+}
+.news-and-updates {
+  min-height: 400px;
+  text-align: center;
+  width: 100%;
+  >div {
+    text-align: center;
+  }
+  p {
+    font-size: 11px;
+    color: #444;
+    line-height: 18px;
+    font-family: 'Roboto Slab', serif;
+  }
+}
+h2 {
+  font-family: pl2-font;
+  font-size: 24px;
+  color: #888;
+  font-weight: 500;
+  margin: 0;
+}

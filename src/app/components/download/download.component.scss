@@ -1,0 +1,42 @@
+.download-container {
+  padding-top: 115px;
+  h2 {
+    font-family: pl2-font;
+    font-size: 25px;
+    margin-bottom: 5px;
+    color: #888;
+  }
+  >div {
+    width: 100%;
+    h5 {
+      font-family: pl2-font;
+      font-size: 18px;
+      color: #888;
+      margin: 5px;
+    }
+  }
+  .content {
+    color: #888;
+    h4 {
+      font-family: pl2-font;
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+  }
+}
+.instruction {
+  width: 100%;
+  text-align: center;
+  h6 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin: 0;
+  }
+  p {
+    font-family: 'Roboto Slab', serif;
+    color: #444;
+    font-size: 11px;
+  }
+}

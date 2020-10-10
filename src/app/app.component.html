@@ -1,0 +1,76 @@
+<div class="main-container" fxLayout="row" fxLayoutAlign="center start">
+  <div fxFlex class="content" fxLayout="column" fxLayoutAlign="center center">
+    <div class="header" routerLink=""></div>
+    <div class="content" fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
+      <div class="left">
+        <div fxFlexOffset="50" fxFlex="50" fxLayout="column">
+          <!-- login -->
+          <div class="login-container">
+            <div fxLayout="column">
+              <div fxLayout="row" fxLayoutAlign="end end" class="login-error">
+                <span>Invalid credentials</span>
+              </div>
+              <div fxLayout="column" class="login" fxLayoutAlign="end end">
+                <input type="text" class="username" autocomplete="off">
+                <input type="password" class="password" autocomplete="off">
+                <div class="btn-login"></div>
+              </div>
+            </div>
+          </div>
+          <!-- user menus -->
+          <div class="menu-container">
+            <div fxFlexOffset="22" fxLayout="column">
+              <div routerLink="registration" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                <img [src]="imgPath + 'banner-icon-1.png'" />
+                <h4>Registration</h4>
+              </div>
+              <div routerLink="download" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                <img [src]="imgPath + 'banner-icon-2.png'" />
+                <div fxLayout="column">
+                  <h4>Download</h4>
+                  <span>Game features and spec</span>
+                </div>
+              </div>
+              <div routerLink="features" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                <img [src]="imgPath + 'banner-icon-3.png'" />
+                <h4>Features</h4>
+              </div>
+              <div routerLink="newbie-guide" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                <img [src]="imgPath + 'banner-icon-4.png'" />
+                <div fxLayout="column">
+                  <h4>Newbie Guide</h4>
+                  <span>Items, level areas & etc..</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- other container -->
+          <div class="other-container">
+
+          </div>
+        </div>
+      </div>
+      <div class="center">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="right">
+        <div fxFlex="50" fxLayout="column">
+          <div fxLayout="column" fxLayoutAlign="center center" class="server-info">
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <h2>12 05 52 20</h2>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start center">
+              <h4>30+ Online</h4>
+            </div>
+          </div>
+          <div class="top-pvp-players">
+
+          </div>
+          <div class="top-pk-players">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
