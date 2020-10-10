@@ -4,12 +4,14 @@
       <h2>Account Registration</h2>
     </div>
 
-    <div fxLayout="column" fxLayoutAlign="start center">
+    <div *ngIf="registerFailedMsg" fxLayout="row" fxLayoutAlign="center center" class="failed-msg">{{registerFailedMsg}}</div>
+
+    <div [formGroup]="form" fxLayout="column" fxLayoutAlign="start center">
       <div class="input">
-        <input type="text" class="username" autocomplete="off">
+        <input type="text" class="username" formControlName="login" autocomplete="off">
       </div>
       <div class="input">
-        <input type="password" class="password" autocomplete="off">
+        <input type="password" formControlName="password" class="password" autocomplete="off">
       </div>
       <div class="btn-register" (click)="onRegister()"></div>
     </div>
@@ -19,6 +21,6 @@
 <ng-template #registrationSuccess>
   <div class="registration-success" fxLayout="column" fxLayoutAlign="center center">
     <h2>Registration Successfull</h2>
-    <p>You can now login your account</p>
+    <p>You can now login your account in-game</p>
   </div>
 </ng-template>

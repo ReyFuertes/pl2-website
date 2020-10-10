@@ -1,0 +1,57 @@
+.login-container {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  max-height: 225px;
+  height: 225px;
+  min-height: 225px;
+  max-height: 225px;
+  .login, .logout {
+    height: 137px;
+    font-family: 'Roboto Slab', serif;
+    input {
+      width: 130px;
+    }
+  }
+}
+.btn-login, .btn-logout {
+  height: 33px;
+  width: 143px;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-login {
+  background-image: url('src/assets/images/login-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 32px;
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.btn-logout {
+  background-image: url('src/assets/images/logout-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 32px;
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.login-error {
+  height: 75px;
+  padding-right: 64px;
+  font-size: 10px;
+  color: #b53847;
+}
+.input-container {
+  background-image: url('src/assets/images/input-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  width: 100%;
+  margin-left: 10px;
+}

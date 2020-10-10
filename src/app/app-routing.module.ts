@@ -9,6 +9,7 @@ import { FeaturesComponent } from './components/features/features.component';
 import { GuideComponent } from './components/guide/guide.component';
 import { MainComponent } from './components/main/main.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { AuthGuard } from './services/auth-guard';
 
 const routes: Routes = [{
   path: '',
@@ -27,7 +28,8 @@ const routes: Routes = [{
   component: GuideComponent
 }, {
   path: 'account-info',
-  component: AccountInfoComponent
+  component: AccountInfoComponent,
+  canActivate: [AuthGuard]
 }];
 
 @NgModule({

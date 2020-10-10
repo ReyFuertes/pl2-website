@@ -14,6 +14,20 @@ import { DownloadComponent } from './components/download/download.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { GuideComponent } from './components/guide/guide.component';
 import { AccountInfoComponent } from './components/account-info/account-info.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/login.service';
+import { RegisterService } from './services/register.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppEffect } from './store/effects/app.effects';
+import { reducers } from './store/app.reducer';
+import { AuthGuard } from './services/auth-guard';
+import { LoaderInterceptor, LoaderService } from './services/loader.interceptor';
+import { PanelModule } from 'primeng/panel';
+import { BlockUIModule } from 'ng-block-ui';
+
+const primengModules = [
+];
 
 @NgModule({
   declarations: [
@@ -24,7 +38,8 @@ import { AccountInfoComponent } from './components/account-info/account-info.com
     DownloadComponent,
     FeaturesComponent,
     GuideComponent,
-    AccountInfoComponent
+    AccountInfoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,10 +47,23 @@ import { AccountInfoComponent } from './components/account-info/account-info.com
     BrowserAnimationsModule,
     FlexLayoutModule,
     SharedModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
+    ReactiveFormsModule,
+    HttpClientModule,
+    ...primengModules,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([AppEffect]),
+    BlockUIModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    RegisterService,
+    AuthGuard,
+    LoaderService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

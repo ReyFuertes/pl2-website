@@ -1,0 +1,19 @@
+<div class="login-container">
+  <div fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="end end" class="login-error">
+      <span *ngIf="invalidCreds">Invalid credentials</span>
+    </div>
+    <div *ngIf="!hasLogin" [formGroup]="form" fxLayout="column" class="login" fxLayoutAlign="start start" fxLayoutGap="5px">
+      <div class="input-container" fxFlex fxLayoutAlign="center center">
+        <input type="text" class="username" formControlName="login" autocomplete="off">
+      </div>
+      <div class="input-container" fxFlex fxLayoutAlign="center center">
+        <input type="password" class="password" formControlName="password" autocomplete="off">
+      </div>
+      <div class="btn-login" (click)="onLogin()"></div>
+    </div>
+    <div *ngIf="hasLogin" class="logout" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div class="btn-logout" (click)="onLogout()"></div>
+    </div>
+  </div>
+</div>

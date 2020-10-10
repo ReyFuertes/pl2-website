@@ -35,7 +35,6 @@ input {
   border: none;
   height: 28px;
   min-width: 130px;
-  margin-bottom: 12px;
   outline: none;
   color: #cccccc;
   text-align: center;
@@ -44,4 +43,14 @@ input {
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+.ui-blockui {
+  z-index: 99999 !important;
+  height: 100% !important;
+  min-height: 100%;
+  max-height: 100%;
+  position: absolute;
+}
+.cdk-global-scrollblock {
+  overflow-y: hidden !important;
 }

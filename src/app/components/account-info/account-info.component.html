@@ -4,5 +4,28 @@
       <h2>Account Information</h2>
       <img [src]="imgPath + 'main-line.png'" />
     </div>
+    <div *ngIf="($characterDetail | async) as detail" class="character-info">
+      <div class="account-name" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+        <span>Account Name</span>
+        <h4>{{ detail?.account_name }}</h4>
+      </div>
+
+      <div class="character" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px">
+        <div *ngFor="let char of detail?.characters; let i = index" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <h5>{{ i + 1}}. {{ char?.char_name }}</h5>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <span class="pill">Max Hp: {{ char?.maxHp }}</span>
+            <span class="pill">Cur Hp: {{ char?.curHp }}</span>
+            <span class="pill">Max Cp: {{ char?.maxCp }}</span>
+            <span class="pill">Max Mp: {{ char?.maxMp }}</span>
+            <span class="pill">CurMp: {{ char?.curMp }}</span>
+            <span class="pill">Exp: {{ char?.exp }}</span>
+            <span class="pill">Online time: {{ fmtOnlineValue(char?.onlinetime) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
