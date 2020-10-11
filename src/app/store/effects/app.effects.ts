@@ -13,13 +13,14 @@ import { of } from 'rxjs';
 export class AppEffect {
   registerAction$ = createEffect(() => this.actions$.pipe(
     ofType(registerAction),
-    mergeMap(({ payload }) => {
+    switchMap(({ payload }) => {
       return this.authSrv.post(payload, 'register').pipe(
         map((response: any) => {
           return registerSuccessAction({ response });
-        })
+        }), 
+        catchError(() => of(registerFailedAction({ response: 'Invalid Fields, try again..' })))
       )
-    }), catchError(() => of(registerFailedAction({ response: 'Invalid Fields, try again..' })))
+    })
   ));
 
   logoutAction$ = createEffect(() => this.actions$.pipe(
@@ -51,11 +52,14 @@ export class AppEffect {
         }),
         map((response: any) => {
           return loginSuccessAction({ response, success: response.success });
-        }, catchError(() => loginfailedAction))
+        }),
+        catchError(() => {
+          return of(loginfailedAction({ response: 'Invalid Fields, try again..' }));
+        })
       )
     })
   ));
 
-
+  //
   constructor(private router: Router, private store: Store<AppState>, private actions$: Actions, private authSrv: AuthService) { }
 }

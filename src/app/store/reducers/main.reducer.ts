@@ -1,24 +1,36 @@
 import { createReducer, on, Action } from "@ngrx/store";
 import { AuthType } from 'src/app/models/generic.model';
-import { clearVariablesAction, loginSuccessAction, logoutSuccessAction, registerFailedAction, registerSuccessAction } from '../actions/main.actions';
+import { clearVariablesAction, loginfailedAction, loginSuccessAction, logoutSuccessAction, registerFailedAction, registerSuccessAction, resetLoginCountAction } from '../actions/main.actions';
 
 export interface MainState {
   loginStatus: boolean,
   hasRegister: boolean,
-  registerFailedMsg: string
+  registerFailedMsg: string,
+  loginFailedMsg: string,
+  loginFailedCount: number
  }
 export const initialState: MainState = {
   loginStatus: null,
   hasRegister: null,
-  registerFailedMsg: null
+  registerFailedMsg: null,
+  loginFailedMsg: null,
+  loginFailedCount: 0
 };
 const reducer = createReducer(
   initialState,
+  on(resetLoginCountAction, (state) => {
+    return Object.assign({}, state, { loginFailedCount: 0 });
+  }),
+  on(loginfailedAction, (state, action) => {
+    let loginFailedCount = state.loginFailedCount;
+    loginFailedCount = loginFailedCount + 1;
+    return Object.assign({}, state, { loginFailedMsg: action.response, loginFailedCount });
+  }),
   on(registerFailedAction, (state, action) => {
     return Object.assign({}, state, { registerFailedMsg: action.response });
   }),
   on(clearVariablesAction, (state) => {
-    return Object.assign({}, state, { hasRegister: null });
+    return Object.assign({}, state, { hasRegister: null, registerFailedMsg: null });
   }),
   on(registerSuccessAction, (state, action) => {
     const hasRegister = action?.response?.status === AuthType.success ? true : false;

@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private router: Router, private store: Store<AppState>, private fb: FormBuilder, private regSrv: RegisterService) {
     this.form = this.fb.group({
-      login: [null, Validators.compose([ Validators.required, Validators.pattern('^[a-zA-Z0-9]+$') ])],
+      login: [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')])],
       password: [null, Validators.required]
     });
 
@@ -29,6 +29,9 @@ export class RegistrationComponent implements OnInit {
 
     this.store.pipe(select(getRegisterFailedMsgSelector)).subscribe(res => {
       this.registerFailedMsg = res;
+      setTimeout(() => {
+        this.resetForm();
+      }, 1000);
     });
   }
 
@@ -38,9 +41,13 @@ export class RegistrationComponent implements OnInit {
     if (this.form.valid) {
       const payload = this.form.value;
       this.store.dispatch(registerAction({ payload }));
-      setTimeout(() => {
-        this.form.reset();
-      }, 1000);
     }
+  }
+
+  private resetForm(): void {
+    this.form.markAsPristine();
+    this.form.markAsUntouched();
+    this.form.setErrors(null);
+    this.form.updateValueAndValidity();
   }
 }

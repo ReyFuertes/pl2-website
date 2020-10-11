@@ -25,6 +25,7 @@ import { AuthGuard } from './services/auth-guard';
 import { LoaderInterceptor, LoaderService } from './services/loader.interceptor';
 import { PanelModule } from 'primeng/panel';
 import { BlockUIModule } from 'ng-block-ui';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 const primengModules = [
 ];
@@ -39,7 +40,8 @@ const primengModules = [
     FeaturesComponent,
     GuideComponent,
     AccountInfoComponent,
-    LoginComponent
+    LoginComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

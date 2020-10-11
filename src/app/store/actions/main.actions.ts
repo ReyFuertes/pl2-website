@@ -12,7 +12,11 @@ export enum AppActionTypes {
   registerSuccessAction = '[App] register (success)',
   registerFailedAction = '[App] register (failed)',
   clearVariablesAction = '[App] clear variables',
+  resetLoginCountAction = '[App] set login count',
 }
+export const resetLoginCountAction = createAction(
+  AppActionTypes.resetLoginCountAction,
+);
 export const registerFailedAction = createAction(
   AppActionTypes.registerFailedAction,
   props<{ response: any }>()
@@ -36,7 +40,8 @@ export const logoutSuccessAction = createAction(
   props<{ response: boolean }>()
 );
 export const loginfailedAction = createAction(
-  AppActionTypes.loginfailedAction
+  AppActionTypes.loginfailedAction,
+  props<{ response: any }>()
 );
 export const loginAction = createAction(
   AppActionTypes.loginAction,

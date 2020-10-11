@@ -6,7 +6,7 @@
 
     <div *ngIf="registerFailedMsg" fxLayout="row" fxLayoutAlign="center center" class="failed-msg">{{registerFailedMsg}}</div>
 
-    <div [formGroup]="form" fxLayout="column" fxLayoutAlign="start center">
+    <div [formGroup]="form" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="5px">
       <div class="input">
         <input type="text" class="username" formControlName="login" autocomplete="off">
       </div>

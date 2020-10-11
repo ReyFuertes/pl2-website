@@ -4,6 +4,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AccountInfoComponent } from './components/account-info/account-info.component';
 import { AnnouncementsNewsComponent } from './components/announcements-news/announcements-news.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { DownloadComponent } from './components/download/download.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { GuideComponent } from './components/guide/guide.component';
@@ -30,6 +31,9 @@ const routes: Routes = [{
   path: 'account-info',
   component: AccountInfoComponent,
   canActivate: [AuthGuard]
+}, {
+  path: 'change-password',
+  component: ChangePasswordComponent
 }];
 
 @NgModule({

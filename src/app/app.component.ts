@@ -18,6 +18,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   public title = 'Pinoy Lineage Website';
   public hasLogin: boolean;
   public isLoading: boolean = false;
+  public selMenu: string;
+
   @BlockUI() blockUI: NgBlockUI;
 
   constructor(private router: Router, public loaderSrv: LoaderService, private store: Store<AppState>, private cdRef: ChangeDetectorRef) {
@@ -42,7 +44,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   public onRegister(): void {
-    this.router.navigateByUrl('registration');
     this.store.dispatch(clearVariablesAction());
   }
 

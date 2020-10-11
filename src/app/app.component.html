@@ -1,7 +1,7 @@
 <block-ui>
   <div class="main-container" fxLayout="row" fxLayoutAlign="center start">
     <div fxFlex class="content" fxLayout="column" fxLayoutAlign="center center">
-      <div class="header" routerLink=""></div>
+      <div class="header" routerLink="" alt="Click to refresh"></div>
       <div class="content" fxLayout="row" fxLayoutAlign="center center" fxFlexFill>
         <div class="left">
           <div fxFlexOffset="50" fxFlex="50" fxLayout="column">
@@ -9,21 +9,27 @@
             <app-login></app-login>
             <!-- user menus -->
             <div class="menu-container">
-              <div fxFlexOffset="22" fxLayout="column">
-                <div *ngIf="!hasLogin" (click)="onRegister()" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+              <div fxFlexOffset="18" fxLayout="column">
+                <div *ngIf="!hasLogin" routerLink="registration" (click)="onRegister()" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
                   <img [src]="imgPath + 'banner-icon-1.png'" />
-                  <h4>Registration</h4>
+                  <div fxLayout="column">
+                    <h4>Registration</h4>
+                    <span>New to PL2, register here</span>
+                  </div>
                 </div>
                 <div routerLink="download" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
                   <img [src]="imgPath + 'banner-icon-2.png'" />
                   <div fxLayout="column">
                     <h4>Download</h4>
-                    <span>Game features and spec</span>
+                    <span>Download files</span>
                   </div>
                 </div>
                 <div routerLink="features" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
                   <img [src]="imgPath + 'banner-icon-3.png'" />
-                  <h4>Features</h4>
+                  <div fxLayout="column">
+                    <h4>Features</h4>
+                    <span>Game features and spec</span>
+                  </div>
                 </div>
                 <div routerLink="newbie-guide" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
                   <img [src]="imgPath + 'banner-icon-4.png'" />
@@ -32,11 +38,28 @@
                     <span>Items, level areas & etc..</span>
                   </div>
                 </div>
+                <div routerLink="change-password" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                  <img [src]="imgPath + 'banner-icon-5.png'" />
+                  <div fxLayout="column">
+                    <h4>Change Password</h4>
+                    <span>Password related issue</span>
+                  </div>
+                </div>
+                <div routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                  <img [src]="imgPath + 'banner-icon-6.png'" />
+                  <div fxLayout="column">
+                    <h4>Community</h4>
+                    <span>Forum & Discussions</span>
+                  </div>
+                </div>
+                <div routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                  <img [src]="imgPath + 'banner-icon-7.png'" />
+                  <div fxLayout="column">
+                    <h4>Discord</h4>
+                    <span>Realtime discussions</span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <!-- other container -->
-            <div class="other-container">
-  
             </div>
           </div>
         </div>
@@ -54,10 +77,10 @@
               </div>
             </div>
             <div class="top-pvp-players">
-  
+
             </div>
             <div class="top-pk-players">
-  
+
             </div>
           </div>
         </div>
@@ -65,4 +88,3 @@
     </div>
   </div>
 </block-ui>>
-
