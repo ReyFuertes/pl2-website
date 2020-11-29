@@ -17,10 +17,11 @@ export class AccountInfoComponent implements OnInit {
   public cols: string[] = ['account_name', 'char_name', 'level'];
 
   constructor(private store: Store<AppState>) {
-    this.$characterDetail = this.store.pipe(select(getCharacterDetailSelector));
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.$characterDetail = this.store.pipe(select(getCharacterDetailSelector));
+   }
 
   public fmtOnlineValue(value: any): any {
     return Number(value) / 1000;

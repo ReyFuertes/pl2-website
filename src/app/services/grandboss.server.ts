@@ -5,8 +5,8 @@ import { IRegisterPayloadDto, IRegisterResponseDto } from '../models/generic.mod
 import { IChangePassword } from '../models/detail.model';
 
 @Injectable({ providedIn: 'root' })
-export class AuthService extends BaseService<IRegisterPayloadDto | IRegisterResponseDto | IChangePassword | {}> {
+export class GrandbossService extends BaseService<any> {
   constructor(http: HttpClient) {
-    super(http, 'auth');
+    super(http, 'grandboss');
   }
 }

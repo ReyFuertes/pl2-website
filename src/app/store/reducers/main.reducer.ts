@@ -1,23 +1,31 @@
 import { createReducer, on, Action } from "@ngrx/store";
 import { AuthType } from 'src/app/models/generic.model';
-import { clearVariablesAction, loginfailedAction, loginSuccessAction, logoutSuccessAction, registerFailedAction, registerSuccessAction, resetLoginCountAction } from '../actions/main.actions';
+import { changePasswordSuccessAction, clearChangePasswordAction, clearVariablesAction, loginfailedAction, loginSuccessAction, logoutSuccessAction, registerFailedAction, registerSuccessAction, resetLoginCountAction } from '../actions/main.actions';
 
 export interface MainState {
   loginStatus: boolean,
   hasRegister: boolean,
   registerFailedMsg: string,
   loginFailedMsg: string,
-  loginFailedCount: number
+  loginFailedCount: number,
+  passwordChanged: boolean
  }
 export const initialState: MainState = {
   loginStatus: null,
   hasRegister: null,
   registerFailedMsg: null,
   loginFailedMsg: null,
-  loginFailedCount: 0
+  loginFailedCount: 0,
+  passwordChanged: null
 };
 const reducer = createReducer(
   initialState,
+  on(clearChangePasswordAction, (state) => {
+    return Object.assign({}, state, { passwordChanged: null });
+  }),
+  on(changePasswordSuccessAction, (state) => {
+    return Object.assign({}, state, { passwordChanged: true });
+  }),
   on(resetLoginCountAction, (state) => {
     return Object.assign({}, state, { loginFailedCount: 0 });
   }),

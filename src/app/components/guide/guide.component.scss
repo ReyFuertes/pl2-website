@@ -1,3 +1,24 @@
+.level-zones {
+  font-size: 16px;
+  font-family: pl2-font;
+  > div > div {
+    margin-bottom: 10px;
+  }
+}
+.line {
+  margin-bottom: 10px !important;
+}
+h3 {
+  margin: 0 !important;
+  font-family: pl2-font;
+  font-size: 16px;
+}
+.drop-zones {
+  font-family: pl2-font;
+  > div {
+    margin-bottom: 10px;
+  }
+}
 .guide-container {
   padding-top: 115px;
   h2 {
@@ -5,6 +26,10 @@
     font-size: 25px;
     margin-bottom: 5px;
     color: #888;
+  }
+  a {
+    font-size: 13px;
+    text-decoration: underline;
   }
   >div {
     width: 100%;
@@ -21,6 +46,14 @@
       font-family: pl2-font;
       font-size: 25px;
       margin-bottom: 5px;
+    }
+  }
+}
+.content {
+  padding: 0 20px;
+  >div {
+    &:first-child {
+      text-align: center;
     }
   }
 }

@@ -23,11 +23,13 @@ import { AppEffect } from './store/effects/app.effects';
 import { reducers } from './store/app.reducer';
 import { AuthGuard } from './services/auth-guard';
 import { LoaderInterceptor, LoaderService } from './services/loader.interceptor';
-import { PanelModule } from 'primeng/panel';
 import { BlockUIModule } from 'ng-block-ui';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { DialogModule } from 'primeng/dialog';
+import { RaidbossStatusComponent } from './components/raidboss-status/raidboss-status.component';
 
 const primengModules = [
+  DialogModule
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const primengModules = [
     GuideComponent,
     AccountInfoComponent,
     LoginComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    RaidbossStatusComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ const primengModules = [
     ...primengModules,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([AppEffect]),
-    BlockUIModule.forRoot()
+    BlockUIModule.forRoot(),
+
   ],
   providers: [
     AuthService,

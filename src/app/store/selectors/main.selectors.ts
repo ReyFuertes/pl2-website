@@ -2,6 +2,10 @@ import { createSelector } from '@ngrx/store';
 import { AppState } from 'src/app/store/app.reducer';
 
 export const selectedState = (state: AppState) => state.main;
+export const getPasswordChangedSelector = createSelector(
+  selectedState,
+  state => state?.passwordChanged
+);
 export const getLoginFailedCountSelector = createSelector(
   selectedState,
   state => state?.loginFailedCount

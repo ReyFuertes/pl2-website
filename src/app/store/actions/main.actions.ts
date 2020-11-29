@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { IResponseDetail } from 'src/app/models/detail.model';
+import { IChangePassword, IResponseDetail } from 'src/app/models/detail.model';
 import { ILoginPayloadDto, IRegisterPayloadDto } from 'src/app/models/generic.model';
 
 export enum AppActionTypes {
@@ -13,7 +13,57 @@ export enum AppActionTypes {
   registerFailedAction = '[App] register (failed)',
   clearVariablesAction = '[App] clear variables',
   resetLoginCountAction = '[App] set login count',
+  changePasswordAction = '[App] change password',
+  changePasswordSuccessAction = '[App] change password (success)',
+  clearChangePasswordAction = '[App] clear change password',
+  getOnlineCountAction = '[App] online count',
+  getOnlineCountSuccessAction = '[App] online count (success)',
+  getPvpStatsAction = '[App] get pvp stats',
+  getPvpStatsSuccessAction = '[App] pvp stats (success)',
+  getPkStatsAction = '[App] get pk stats',
+  getPkStatsSuccessAction = '[App] pk stats (success)',
+  getgrandBossAction = '[App] get grandboss stats',
+  getgrandBossSuccessAction = '[App] pk grandboss (success)',
 }
+export const getgrandBossAction = createAction(
+  AppActionTypes.getgrandBossAction
+);
+export const getgrandBossSuccessAction = createAction(
+  AppActionTypes.getgrandBossSuccessAction,
+  props<{ response: any }>()
+);
+export const getPkStatsAction = createAction(
+  AppActionTypes.getPkStatsAction
+);
+export const getPkStatsSuccessAction = createAction(
+  AppActionTypes.getPkStatsSuccessAction,
+  props<{ response: any }>()
+);
+export const getPvpStatsAction = createAction(
+  AppActionTypes.getPvpStatsAction
+);
+export const getPvpStatsSuccessAction = createAction(
+  AppActionTypes.getPvpStatsSuccessAction,
+  props<{ response: any }>()
+);
+export const getOnlineCountAction = createAction(
+  AppActionTypes.getOnlineCountAction
+);
+export const getOnlineCountSuccessAction = createAction(
+  AppActionTypes.getOnlineCountSuccessAction,
+  props<{ response: any }>()
+);
+export const clearChangePasswordAction = createAction(
+  AppActionTypes.clearChangePasswordAction
+);
+export const changePasswordAction = createAction(
+  AppActionTypes.changePasswordAction,
+  props<{ payload: IChangePassword }>()
+);
+export const changePasswordSuccessAction = createAction(
+  AppActionTypes.changePasswordSuccessAction,
+  props<{ response: string }>()
+);
 export const resetLoginCountAction = createAction(
   AppActionTypes.resetLoginCountAction,
 );

@@ -1,0 +1,38 @@
+.raidboss-status {
+  padding: 125px 13px 0 25px;
+  color: #666;
+  font-size: 12px;
+  h4 {
+    margin: 0 !important;
+    font-size: 18px;
+    font-family: pl2-font;
+  }
+}
+div {
+  width: 100%;
+  display: flex;
+}
+line {
+  margin: 0 auto;
+}
+.is-alive {
+  color: greenyellow;
+}
+.grandboss {
+  > div {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    font-family: pl2-font;
+    font-size: 16px;
+    padding: 5px;
+    border: thin #444 solid;
+    border-radius: 2px;
+    height: 62px;
+    width: 173px;
+    img {
+      height: 50px;
+      width: 50px;
+      border-radius: 3px;
+    }
+  }
+}

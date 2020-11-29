@@ -40,7 +40,9 @@ export class LoginComponent extends GenericDestroyComponent implements OnInit {
       .subscribe(res => {
         if (res) {
           this.invalidCreds = true;
-        } else this.invalidCreds = false;
+        } else {
+          this.invalidCreds = false;
+        }
       })
 
     this.store.pipe(select(getLoginFailedCountSelector),

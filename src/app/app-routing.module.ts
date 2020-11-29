@@ -9,6 +9,7 @@ import { DownloadComponent } from './components/download/download.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { GuideComponent } from './components/guide/guide.component';
 import { MainComponent } from './components/main/main.component';
+import { RaidbossStatusComponent } from './components/raidboss-status/raidboss-status.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AuthGuard } from './services/auth-guard';
 
@@ -34,6 +35,9 @@ const routes: Routes = [{
 }, {
   path: 'change-password',
   component: ChangePasswordComponent
+}, {
+  path: 'raidboss-status',
+  component: RaidbossStatusComponent
 }];
 
 @NgModule({

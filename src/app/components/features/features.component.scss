@@ -17,10 +17,15 @@
   }
   .content {
     color: #888;
+    width: 100%;
     h4 {
       font-family: pl2-font;
       font-size: 25px;
       margin-bottom: 5px;
     }
   }
+}
+.feature-list {
+  font-size: 16px;
+  font-family: pl2-font;
 }

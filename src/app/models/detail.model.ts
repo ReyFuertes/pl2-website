@@ -1,5 +1,11 @@
 import { AuthType } from './generic.model';
 
+export interface IChangePassword {
+  username?: string;
+  currentPassword?: string;
+  newPassword?: string;
+  confirmNewPassword?: string;
+}
 export interface IResponseDetail {
   account_name?: string,
   detail: Array<{

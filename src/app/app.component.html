@@ -45,18 +45,20 @@
                     <span>Password related issue</span>
                   </div>
                 </div>
-                <div routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                <div routerLink="raidboss-status" routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
                   <img [src]="imgPath + 'banner-icon-6.png'" />
                   <div fxLayout="column">
-                    <h4>Community</h4>
-                    <span>Forum & Discussions</span>
+                    <h4>RaidBoss Status</h4>
+                    <span>Grandboss/Regular RB's</span>
                   </div>
                 </div>
                 <div routerLinkActive="active" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
                   <img [src]="imgPath + 'banner-icon-7.png'" />
                   <div fxLayout="column">
-                    <h4>Discord</h4>
-                    <span>Realtime discussions</span>
+                    <a href="https://discord.gg/MPuy8aX" target="_blank">
+                      <h4>Discord</h4>
+                      <span>Realtime discussions</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -70,21 +72,29 @@
           <div fxFlex="50" fxLayout="column">
             <div fxLayout="column" fxLayoutAlign="center center" class="server-info">
               <div fxLayout="row" fxLayoutAlign="start center">
-                <h2>12 05 52 20</h2>
+                <h2>{{ now$ | async | date:'hh' }}</h2>
+                <h2>{{ now$ | async | date:'mm' }}</h2>
+                <h2>{{ now$ | async | date:'ss' }}</h2>
               </div>
               <div fxLayout="row" fxLayoutAlign="start center">
-                <h4>30+ Online</h4>
+                <h4>{{ onlineCount }} Online</h4>
               </div>
             </div>
             <div class="top-pvp-players">
-
+              <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
+                <div *ngFor="let pvp of ($pvpKills | async); let i = index" class="name">
+                  {{ i + 1 }}. {{ pvp?.name }} </div>
+              </div>
             </div>
             <div class="top-pk-players">
-
+              <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
+                <div *ngFor="let pk of ($pkKills | async); let i = index" class="name">
+                  {{ i + 1 }}. {{ pk?.name }} </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</block-ui>>
+</block-ui>

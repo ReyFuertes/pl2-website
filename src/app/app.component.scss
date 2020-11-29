@@ -2,6 +2,27 @@
   display: flex;
   flex-direction: column;
 }
+a:hover {
+  text-decoration: none !important;
+}
+.top-pvp-players {
+  height: 238px;
+  padding-top: 58px;
+  padding-left: 44px;
+  .name {
+    color: #666;
+    font-family: pl2-font;
+  }
+}
+.top-pk-players {
+  height: 238px;
+  padding-top: 87px;
+  padding-left: 44px;
+  .name {
+    color: #666;
+    font-family: pl2-font;
+  }
+}
 .server-info {
   width: 100%;
   height: 230px;
@@ -11,8 +32,25 @@
     height: 65px;
     width: 100%;
     text-align: center;
+    &:first-child {
+      padding-left: 6px;
+    }
   }
   h2 {
+    font-family: pl2-font;
+    font-size: 25px;
+    background: -webkit-linear-gradient(#795032, #e1cb88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 25px !important;
+    &:nth-child(2) {
+      margin-left: 3px;
+    }
+    &:last-child {
+      margin-left: 4px;
+    }
+  }
+  span {
     font-family: pl2-font;
     font-size: 25px;
     background: -webkit-linear-gradient(#795032, #e1cb88);
@@ -25,7 +63,7 @@
     font-weight: 400;
     margin: 0;
     font-size: 13px;
-    padding-left: 17px;
+    padding-left: 11px;
   }
 }
 div .active {
