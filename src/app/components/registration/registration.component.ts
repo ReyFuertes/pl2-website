@@ -21,7 +21,7 @@ export class RegistrationComponent implements OnInit {
     this.form = this.fb.group({
       login: [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]+$')])],
       password: [null, Validators.required],
-      email: [null, Validators.required]
+      email: [null]
     });
 
     this.store.pipe(select(getHasRegisteredSelector)).subscribe(res => {

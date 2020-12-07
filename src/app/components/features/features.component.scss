@@ -9,7 +9,7 @@
   >div {
     width: 100%;
     h5 {
-      font-family: pl2-font;
+      font-family: 'Roboto Slab', serif;
       font-size: 18px;
       color: #888;
       margin: 5px;
@@ -19,13 +19,14 @@
     color: #888;
     width: 100%;
     h4 {
-      font-family: pl2-font;
+      font-family: 'Roboto Slab', serif;
       font-size: 25px;
       margin-bottom: 5px;
     }
   }
 }
 .feature-list {
-  font-size: 16px;
-  font-family: pl2-font;
+  font-size: 15px;
+  font-family: 'Roboto Slab', serif;
+  color: #444;
 }

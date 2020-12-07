@@ -5,11 +5,11 @@
       <span *ngIf="loginAttemptReached">Login attemps reached</span>
     </div>
     <div *ngIf="!hasLogin" [formGroup]="form" fxLayout="column" class="login" fxLayoutAlign="start start">
-      <div class="input-container" fxFlex fxLayoutAlign="center center">
-        <input type="text" class="username" formControlName="login" autocomplete="off">
+      <div class="input-container" fxFlex  fxLayoutAlign="center center">
+        <input type="text" class="username" placeholder="ID" formControlName="login" autocomplete="off">
       </div>
       <div class="input-container" fxFlex fxLayoutAlign="center center">
-        <input type="password" class="password" formControlName="password" autocomplete="off">
+        <input type="password" class="password" placeholder="Password" formControlName="password" autocomplete="off">
       </div>
       <div class="btn-login" [ngClass]="{'disabled': !form.valid || loginAttemptReached }" (click)="onLogin()"></div>
     </div>

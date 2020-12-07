@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
   imgPath: '/assets/images/',
-  apiUrl: 'http://206.189.34.92:3200/api/v1/'
+  apiUrl: 'http://54.255.214.78:443/api/v1/',
+  audioPath: '/assets/audio/',
 };

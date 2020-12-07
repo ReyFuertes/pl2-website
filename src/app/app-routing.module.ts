@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AccountInfoComponent } from './components/account-info/account-info.component';
 import { AnnouncementsNewsComponent } from './components/announcements-news/announcements-news.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { DonationsComponent } from './components/donations/donations.component';
 import { DownloadComponent } from './components/download/download.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { GuideComponent } from './components/guide/guide.component';
@@ -38,6 +39,9 @@ const routes: Routes = [{
 }, {
   path: 'raidboss-status',
   component: RaidbossStatusComponent
+}, {
+  path: 'donations',
+  component: DonationsComponent
 }];
 
 @NgModule({

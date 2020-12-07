@@ -27,6 +27,7 @@ import { BlockUIModule } from 'ng-block-ui';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { DialogModule } from 'primeng/dialog';
 import { RaidbossStatusComponent } from './components/raidboss-status/raidboss-status.component';
+import { DonationsComponent } from './components/donations/donations.component';
 
 const primengModules = [
   DialogModule
@@ -44,7 +45,8 @@ const primengModules = [
     AccountInfoComponent,
     LoginComponent,
     ChangePasswordComponent,
-    RaidbossStatusComponent
+    RaidbossStatusComponent,
+    DonationsComponent
   ],
   imports: [
     BrowserModule,

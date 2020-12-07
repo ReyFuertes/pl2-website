@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { interval, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -17,6 +17,7 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   public imgPath: string = environment.imgPath;
+  public audioPath: string = environment.audioPath;
   public title = 'Lineage PH';
   public hasLogin: boolean;
   public isLoading: boolean = false;
@@ -25,6 +26,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   public now$: Observable<Date>;
   public $pvpKills: Observable<any>;
   public $pkKills: Observable<any>;
+  public loadAudio: boolean = false;
+
+  @ViewChild('audio', { static: false }) audioPlayerRef: any;
 
   @BlockUI() blockUI: NgBlockUI;
 
@@ -52,14 +56,13 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
 
     this.store.pipe(select(getOnlineCountSelector)).subscribe(res => {
-      if(res) {
+      if (res) {
         this.onlineCount = res;
       } else {
         this.onlineCount = 0;
       }
     });
-    
-    
+
     this.$pkKills = this.store.pipe(select(getPkKillsSelector));
     this.$pvpKills = this.store.pipe(select(getPvpKillsSelector));
 
@@ -67,12 +70,22 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.isLoading = res;
       if (this.isLoading) this.blockUI.start('Loading...');
       else this.blockUI.stop();
-
     })
   }
 
   public onRegister(): void {
     this.store.dispatch(clearVariablesAction());
+  }
+
+  @HostListener('document:click', ['$event'])
+  public clickout(event) {
+    const audio = this.audioPlayerRef?.nativeElement;
+    if (audio) {
+      if (audio.duration > 0) {
+        audio.play();
+        audio.volume = 0.05;
+      }
+    }
   }
 
   ngAfterViewInit(): void {
